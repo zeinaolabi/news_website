@@ -16,7 +16,7 @@ $.get( getArticlesAPI, function( data ) {
         
         //Get the publisher
         let publisher = clone.querySelector("#publisher");
-        publisher.textContent = data[i].publisher;
+        publisher.textContent = "publisher: "+ data[i].publisher;
         
         //Get article image
         let profilePic = clone.querySelector("#image");
