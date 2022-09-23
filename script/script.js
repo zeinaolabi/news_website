@@ -1,7 +1,7 @@
 const getArticlesAPI = "http://localhost/news_website/backend/getArticles.php";
 
 $.get( getArticlesAPI, function( data ) {
-    
+
     //Loop over the response
     for(let i = 0; i < data.length; i++){
         //Make a clone of the article model
@@ -17,6 +17,10 @@ $.get( getArticlesAPI, function( data ) {
         //Get the publisher
         let publisher = clone.querySelector("#publisher");
         publisher.textContent = "publisher: "+ data[i].publisher;
+
+        //Get the article
+        let article = clone.querySelector("#publisher");
+        article.textContent = data[i].article;
         
         //Get article image
         let profilePic = clone.querySelector("#image");
