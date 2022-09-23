@@ -4,13 +4,12 @@
 
     $query = $mysqli->prepare("SELECT * FROM articles");
     $query->execute();
-    $query->store_result();
+    $array = $query->get_result();
 
     $response = [];
-
-    while($article = $query->fetch_assoc()){
-        $response[] = $article;
+    
+    while($a = $array->fetch_assoc()){
+        $response[] = $a;
     }
-
     echo json_encode($response);
 ?>
